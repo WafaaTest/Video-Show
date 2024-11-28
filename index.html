@@ -10,34 +10,39 @@
         body {
             margin: 0;
             font-family: 'Roboto', sans-serif;
-            background-color: #f0f0f0;
-            color: #333;
+            background: linear-gradient(135deg, #1e1e1e, #3a3a3a);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         header {
             background: #222;
             color: #fff;
-            padding: 20px;
+            width: 100%;
+            padding: 20px 0;
             text-align: center;
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 700;
             letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         .gallery-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             padding: 20px;
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 20px auto;
         }
 
         .video-card {
             background: #fff;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
             position: relative;
@@ -45,7 +50,7 @@
 
         .video-card:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
         }
 
         .video-thumbnail {
@@ -61,10 +66,15 @@
         }
 
         .video-title {
-            font-size: 1.2rem;
-            font-weight: 500;
+            font-size: 1.4rem;
+            font-weight: 600;
             margin: 10px 0;
             color: #333;
+        }
+
+        .video-description {
+            font-size: 1rem;
+            color: #555;
         }
 
         .play-icon {
@@ -72,7 +82,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: rgba(255, 255, 255, 0.9);
             transition: color 0.3s;
         }
@@ -81,72 +91,91 @@
             color: #ff5252;
         }
 
-        .video-description {
+        footer {
+            position: absolute;
+            bottom: 20px;
+            text-align: center;
+            width: 100%;
+            color: #ccc;
             font-size: 0.9rem;
-            color: #555;
         }
 
+        footer a {
+            color: #ff5252;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Media Queries for smaller screens */
         @media (max-width: 768px) {
             header {
                 font-size: 1.5rem;
             }
+
+            .video-title {
+                font-size: 1.2rem;
+            }
+
+            .video-description {
+                font-size: 0.9rem;
+            }
+
+            .video-card {
+                margin: 0 auto;
+            }
+
+            .video-thumbnail {
+                height: 120px;
+            }
         }
-        footer {
-            background-color: black;
-            color: #fff;
-            padding: 20px 20px;
-            width: 40%;
-            border-radius: 10px;
-            margin-top: 10%;
-            position: absolute;
-            bottom: 5px;
-        }     
+
+        @media (max-width: 480px) {
+            header {
+                font-size: 1.2rem;
+                padding: 15px 0;
+            }
+
+            .gallery-container {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .video-thumbnail {
+                height: 100px;
+            }
+
+            footer {
+                font-size: 0.9rem;
+                padding: 10px 15px;
+            }
+        }
     </style>
 </head>
 <body>
-    <header>🎥 Video Show</header>
+    <header>🎥 Video-Show</header>
     <div class="gallery-container">
-        <!-- Video Card 1 -->
         <a href="video1.html">
             <div class="video-card">
-                <div class="video-thumbnail" style="background-image: url('images/video1-thumbnail.jpg');">
+                <div class="video-thumbnail" style="background-image: url('images/image.png');">
                     <i class="fas fa-play play-icon"></i>
                 </div>
                 <div class="video-content">
-                    <div class="video-title">محاظرة عن الظغط</div>
-                    <div class="video-description">محاظرة تعريفية بسيطة عن الظغط</div>
-                </div>
-            </div>
-        </a>
-
-        <!-- Video Card 2 -->
-        <a href="video2.html">
-            <div class="video-card">
-                <div class="video-thumbnail" style="background-image: url('images/video2-thumbnail.jpg');">
-                    <i class="fas fa-play play-icon"></i>
-                </div>
-                <div class="video-content">
-                    <div class="video-title">انواع الضغط</div>
-                    <div class="video-description">فيديو بسيط تعريفي عن انواع الضغط</div>
-                </div>
-            </div>
-        </a>
-
-        <!-- Video Card 3 -->
-        <a href="video3.html">
-            <div class="video-card">
-                <div class="video-thumbnail" style="background-image: url('images/video3-thumbnail.jpg');">
-                    <i class="fas fa-play play-icon"></i>
-                </div>
-                <div class="video-content">
-                    <div class="video-title">علاج الضغط</div>
-                    <div class="video-description">فيديو تعريفي بسيط عن علاج الضغط</div>
+                    <div class="video-title">الفلور</div>
+                    <div class="video-description">شرح عن الفلور</div>
                 </div>
             </div>
         </a>
     </div>
     <footer>
-        ! Made By Alphax
-     </footer>
+        Made by <a href="#">Alpha-A</a>
+    </footer>
 </body>
 </html>
